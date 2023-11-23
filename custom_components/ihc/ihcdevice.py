@@ -36,6 +36,7 @@ class IHCDevice(Entity):
         self.device_id = None
         self.suggested_area = None
         if product:
+            self._name = f"{self.product['group']} {self.product['position']}"
             self.ihc_name = product["name"]
             self.ihc_note = product["note"]
             self.ihc_position = product["position"]
@@ -61,7 +62,7 @@ class IHCDevice(Entity):
     @property
     def name(self):
         """Return the device name."""
-        return f"Name: {self._name}"
+        return f"{self._name}"
     
     @property
     def has_entity_name(self):
