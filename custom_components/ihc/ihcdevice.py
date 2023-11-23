@@ -62,6 +62,10 @@ class IHCDevice(Entity):
     def name(self):
         """Return the device name."""
         return self._name
+    
+    @property
+    def has_entity_name(self):
+        return self._name == True
 
     @property
     def unique_id(self):
