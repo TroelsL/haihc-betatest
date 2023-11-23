@@ -61,7 +61,7 @@ class IHCDevice(Entity):
     @property
     def name(self):
         """Return the device name."""
-        return self._name
+        return f"Name: {self._name}"
     
     @property
     def has_entity_name(self):
@@ -70,7 +70,7 @@ class IHCDevice(Entity):
     @property
     def unique_id(self):
         """Return a unique ID."""
-        return f"{self.controller_id}-{self.ihc_id}"
+        return f"UID: {self.controller_id}-{self.ihc_id}"
 
     @property
     def extra_state_attributes(self):
