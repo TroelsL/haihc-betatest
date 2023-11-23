@@ -36,7 +36,8 @@ class IHCDevice(Entity):
         self.device_id = None
         self.suggested_area = None
         if product:
-            self._name = f"{product['group']} {product['position']}"
+            if "group" in product and "position" in product:
+                self._name = f"{product['group']} {product['position']}"
             self.ihc_name = product["name"]
             self.ihc_note = product["note"]
             self.ihc_position = product["position"]
