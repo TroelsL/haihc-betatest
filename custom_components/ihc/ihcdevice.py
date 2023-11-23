@@ -70,7 +70,7 @@ class IHCDevice(Entity):
     @property
     def unique_id(self):
         """Return a unique ID."""
-        return f"UID: {self.controller_id}-{self.ihc_id}"
+        return f"{self.controller_id}-{self.ihc_id}"
 
     @property
     def extra_state_attributes(self):
