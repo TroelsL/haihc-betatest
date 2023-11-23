@@ -126,8 +126,7 @@ def get_discovery_info(platform_setup, groups, controller_id):
                     if "setting" in node.attrib and node.attrib["setting"] == "yes":
                         continue
                     ihc_id = int(node.attrib["id"].strip("_"), 0)
-                    position = product.get("position") or ""
-                    name = f"{groupname} {position}".rstrip()
+                    name = f"{controller_id}_{ihc_id}"
                     # make the model number look a bit nicer - strip leading _
                     model = product.get("product_identifier", "").lstrip("_")
                     device = {
@@ -137,7 +136,7 @@ def get_discovery_info(platform_setup, groups, controller_id):
                             "id": product_id,
                             "name": product.get("name") or "",
                             "note": product.get("note") or "",
-                            "position": position,
+                            "position": product.get("position") or "",
                             "model": model,
                             "group": groupname,
                         },
