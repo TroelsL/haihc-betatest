@@ -44,7 +44,7 @@ class IHCDevice(Entity):
             self.suggested_area = product["group"] if "group" in product else None
             if "id" in product:
                 product_id = product["id"]
-                self.device_id = f"{controller_id}_{product_id }"
+                self.device_id = f"{controller_id}_{product_id}"
                 # this will name the device the same way as the IHC visual application: Product name + position
                 self.device_name = product["name"]
                 if self.ihc_position:
@@ -63,7 +63,7 @@ class IHCDevice(Entity):
     @property
     def name(self):
         """Return the device name."""
-        return f"{self._name}"
+        return f"NAME_{self._name}"
     
     @property
     def has_entity_name(self):
